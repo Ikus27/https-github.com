@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_project</title>
+    <script type="text/javascript">
+
+//    Part 1
+var team = {};
+var arr = [];
+var arr1  = ['Junior developer', 
+              'Middle developer',
+              'Senior developer', 
+              'Junior QA', 
+              'Middle QA',
+              'Senior QA', 
+              'Project manager'
+            ];
+function getNames() {
+    for (var i = 0; i < arr1.length; i++) {
+    arr[i] = prompt("Введіть ім'я члена команди");
+    // employee = prompt(`Введіть ім'я члена команди`);
+    //     arr.push(employee);
+    }
+}   
+    // getNames();
+
+//     Part2
+     var person = [];
+function createTeam() {
+    for ( let i = 0; i < arr1.length; i++) {
+    // let name = arr[i];
+    // let position = arr1[i];
+    // team[name] = position;
+   
+    var person = {
+          name:  arr[i],
+          position: arr1[i],
+      }
+        team[arr1[i]] = person; 
+     document.write(`${person.name} : ${person.position} <br/>`);
+  }
+        console.log(team);
+}
+   
+    //  Part 3
+
+function setSalary() {
+   var getRandomNum = (min, max) => {
+            return Math.floor(Math.random() * (max - min) + min)
+    };    
+    for (const key in team) {
+        var obj = team[key];
+        var elem = team[key]["position"];
+     if (elem.indexOf('Junior') == 0) {obj["salary"] = getRandomNum(500, 1000);
+            } else if (elem.indexOf('Middle') == 0) {obj["salary"] = getRandomNum(1500, 2000);
+                } else if (elem.indexOf('Senior') == 0) { obj["salary"] = getRandomNum(2500, 3000);
+                    } else { obj["salary"] = getRandomNum(4000, 4500);
+                }
+            }
+}
+function SetMetodTellAboutYourSelf() {
+    for (const key in team) {
+   var obj = team[key];
+
+    }
+}
+ getNames();
+ createTeam();     
+ setSalary();
+ SetMetodTellAboutYourSelf()
+  
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>
